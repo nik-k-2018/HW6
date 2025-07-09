@@ -4,15 +4,17 @@ public class Task4_4 {
         double annualRate = 0.07;           // Годовая ставка (7%)
         double monthlyRate = annualRate / 12; // Месячная ставка
         double total = 0;                    // Текущая сумма накоплений
-        int month = 0;                       // Счетчик месяцев
 
-        // Цикл для 10 лет (120 месяцев)
-        for (month = 1; month <= 120; month++) {
-            // Добавляем ежемесячный взнос и начисляем проценты
+        System.out.println("Исходная сумма: " + (int)total + " рублей");
+
+        // Цикл по месяцам (9 лет = 108 месяцев)
+        for (int month = 1; month <= 108; month++) {
             total += total * monthlyRate + monthlyContribution;
 
-            // Выводим результат
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + (int) total + " рублей");
+            // Проверяем, является ли текущий месяц шестым, двенадцатым и т.д.
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + ", сумма накоплений равна " + (int) total + " рублей");
+            }
         }
     }
 }
